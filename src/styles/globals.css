@@ -85,7 +85,7 @@ body {
   overflow-x: hidden;
   text-align: center;
   background-color: rgb(5, 5, 5);
-  color: aliceblue;
+  color: rgb(246, 255, 240);
 }
 
 body {
@@ -110,8 +110,23 @@ a {
 }
 .header{
   color: rgb(137, 240, 240);
+
 }
 .header2{
-  color: rgb(209, 215, 96);
+  color: rgb(169, 235, 244);
 }
 
+.label{
+  margin-left: 20px;
+}
+.product-list{
+  margin-top: 60px;
+}
+.filter-sort{
+  border: 2px solid rgb(179, 249, 246);
+  padding: 46px;
+    width: 554px;
+    margin-left: 570px;
+    background-color: rgb(5, 34, 39);
+    border-radius: 30px;
+}

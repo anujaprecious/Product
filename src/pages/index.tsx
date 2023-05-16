@@ -98,8 +98,9 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="header">Products</h1>
-
+      <h1 className="header">Products List</h1>
+      <br/>
+<div className="filter-sort">
       <div>
         <h2 className="header2">Filter By:</h2>
         <label>
@@ -114,10 +115,11 @@ export default function Home() {
             <option value="50-75">$50 - $75</option>
             <option value="75-100">$75 - $100</option>
             <option value="100-125">$100 - $125</option>
+            <option value="125-150">$125 - $150</option>
           </select>
         </label>
 
-        <label>
+        <label className="label">
           Category:
           <select
             value={category}
@@ -130,7 +132,7 @@ export default function Home() {
             <option value="jewelery">jewelery</option>
           </select>
         </label>
-        <label>
+        <label className="label">
           Rating:
           <select value={rating} onChange={(e) => setRating(e.target.value)}>
             <option value="">All</option>
@@ -153,7 +155,7 @@ export default function Home() {
           </select>
         </label>
 
-        <label>
+        <label className="label">
           Price:
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="">None</option>
@@ -162,7 +164,7 @@ export default function Home() {
           </select>
         </label>
 
-        <label>
+        <label className="label">
           Rating:
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="">None</option>
@@ -171,9 +173,9 @@ export default function Home() {
           </select>
         </label>
       </div>
-
+      </div>
       {filteredProducts.map((product) => (
-        <div key={product.id}>
+        <div className="product-list" key={product.id}>
           <h2>{product.title}</h2>
           <p>Price: {product.price}</p>
           <p>Category: {product.category}</p>
