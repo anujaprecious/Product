@@ -99,80 +99,80 @@ export default function Home() {
   return (
     <div>
       <h1 className="header">Products List</h1>
-      <br/>
-<div className="filter-sort">
-      <div>
-        <h2 className="header2">Filter By:</h2>
-        <label>
-          Price Range:
-          <select
-            value={priceRange}
-            onChange={(e) => setPriceRange(e.target.value)}
-          >
-            <option value="">All</option>
-            <option value="0-25">$0 - $25</option>
-            <option value="25-50">$25 - $50</option>
-            <option value="50-75">$50 - $75</option>
-            <option value="75-100">$75 - $100</option>
-            <option value="100-125">$100 - $125</option>
-            <option value="125-150">$125 - $150</option>
-          </select>
-        </label>
+      <br />
+      <div className="filter-sort">
+        <div>
+          <h2 className="header2">Filter By:</h2>
+          <label>
+            Price Range:
+            <select
+              value={priceRange}
+              onChange={(e) => setPriceRange(e.target.value)}
+            >
+              <option value="">All</option>
+              <option value="0-25">$0 - $25</option>
+              <option value="25-50">$25 - $50</option>
+              <option value="50-75">$50 - $75</option>
+              <option value="75-100">$75 - $100</option>
+              <option value="100-125">$100 - $125</option>
+              <option value="125-150">$125 - $150</option>
+            </select>
+          </label>
 
-        <label className="label">
-          Category:
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="">All</option>
-            <option value="electronics">Electronics</option>
-            <option value="men's clothing">Men Clothing</option>
-            <option value="women's clothing">Women Clothing</option>
-            <option value="jewelery">jewelery</option>
-          </select>
-        </label>
-        <label className="label">
-          Rating:
-          <select value={rating} onChange={(e) => setRating(e.target.value)}>
-            <option value="">All</option>
-            <option value="5">5+</option>
-            <option value="4">4+</option>
-            <option value="3">3+</option>
-            <option value="2">2+</option>
-          </select>
-        </label>
-      </div>
+          <label className="label">
+            Category:
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="">All</option>
+              <option value="electronics">Electronics</option>
+              <option value="men's clothing">Men Clothing</option>
+              <option value="women's clothing">Women Clothing</option>
+              <option value="jewelery">jewelery</option>
+            </select>
+          </label>
+          <label className="label">
+            Rating:
+            <select value={rating} onChange={(e) => setRating(e.target.value)}>
+              <option value="">All</option>
+              <option value="5">5+</option>
+              <option value="4">4+</option>
+              <option value="3">3+</option>
+              <option value="2">2+</option>
+            </select>
+          </label>
+        </div>
 
-      <div>
-        <h2 className="header2">Sort By:</h2>
-        <label>
-          Title:
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="">None</option>
-            <option value="title-asc">Title (A-Z)</option>
-            <option value="title-desc">Title (Z-A)</option>
-          </select>
-        </label>
+        <div>
+          <h2 className="header2">Sort By:</h2>
+          <label>
+            Title:
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+              <option value="">None</option>
+              <option value="title-asc">Title (A-Z)</option>
+              <option value="title-desc">Title (Z-A)</option>
+            </select>
+          </label>
 
-        <label className="label">
-          Price:
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="">None</option>
-            <option value="price-asc">Price (Low to High)</option>
-            <option value="price-desc">Price (High to Low)</option>
-          </select>
-        </label>
+          <label className="label">
+            Price:
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+              <option value="">None</option>
+              <option value="price-asc">Price (Low to High)</option>
+              <option value="price-desc">Price (High to Low)</option>
+            </select>
+          </label>
 
-        <label className="label">
-          Rating:
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="">None</option>
-            <option value="rating-asc">Rating (Low to High)</option>
-            <option value="rating-desc">Rating (High to Low)</option>
-          </select>
-        </label>
-      </div>
+          <label className="label">
+            Rating:
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+              <option value="">None</option>
+              <option value="rating-asc">Rating (Low to High)</option>
+              <option value="rating-desc">Rating (High to Low)</option>
+            </select>
+          </label>
+        </div>
       </div>
       {filteredProducts.map((product) => (
         <div className="product-list" key={product.id}>
@@ -180,6 +180,16 @@ export default function Home() {
           <p>Price: {product.price}</p>
           <p>Category: {product.category}</p>
           <p>Rating: {product.rating.rate}</p>
+          <p>
+            image:{" "}
+            <img
+              src={product.image}
+              alt="Product Image"
+              width="200"
+              height="200"
+            />
+          </p>
+          <p>Description: {product.description}</p>
         </div>
       ))}
     </div>
